@@ -47,21 +47,27 @@ As a general rule, we don’t assign issues to anyone. If you find an issue to w
 
 Here is a **template** which you *should* follow:
 ```
-## Summary : 
+## Description :
+A clear and concise description of what the bug is.
 
 ## Steps to reproduce :
  - Steps
 
 ## Expected results :
+ What that *should* have happened.
 
 ## Actual results :
+What that *actually* have happened.
 
 ## Notes :
+Any additional information you want to add.
 
 ## Screenshot/Video (optional) : 
 
-[If UI-related]
 ## Device and Device info : 
+- Device : [e.g. Desktop, Laptop, iPhone12]
+- OS : [e.g. Windows, Linux, MacOS, Android]
+- Browser : [e.g. Chrome, Firefox, Safari] (if applicable)
 ```
 
 ## Use a Consistent Coding Style
