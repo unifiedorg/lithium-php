@@ -1,6 +1,6 @@
 <?php // Controllers should be in /app/controllers/Api.
 
-$router->addMVCRoute('GET', '/api/getBlog/(\d+)', "Blog@get");
+$router->addMVCRoute('GET', '/api/echo/(\w+)', "Example@echo");
 $router->addRoute('GET', '/api/getAsset/(\w+)/(\w+)', function ($type, $asset) {
     switch($type){
         case "css":

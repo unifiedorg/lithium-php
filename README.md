@@ -1,4 +1,4 @@
-![Unified Banner](https://raw.githubusercontent.com/unifiedorg/.github/main/img/logo-banner.png)
+![Lithium Banner](https://raw.githubusercontent.com/unifiedorg/.github/main/img/lithium-banner.png)
 
 # Lithium PHP
 Lithium is a simple and minimal PHP framework. It is not the best framework out there, but we will try to make it the best we can. This framework contains the following features :
