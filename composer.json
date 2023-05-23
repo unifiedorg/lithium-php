@@ -1,0 +1,25 @@
+{
+    "name": "unified/lithium",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Unified\\Lithium\\Data\\": "lib/org.unified.lithium.data/",
+            "Unified\\Lithium\\Database\\": "lib/org.unified.lithium.database/",
+            "Unified\\Lithium\\Logger\\": "lib/org.unified.lithium.logger/",
+            "Unified\\Lithium\\Utils\\": "lib/org.unified.lithium.utils/",
+            "Unified\\Lithium\\Router\\": "lib/org.unified.lithium.router/",
+            "Unified\\Lithium\\Security\\": "lib/org.unified.lithium.security/",
+            "Unified\\Lithium\\Store\\": "lib/org.unified.lithium.store/",
+            "Unified\\Lithium\\HTTP\\": "lib/org.unified.lithium.http/",
+
+            "App\\Controllers\\": "app/controllers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "unium",
+            "email": "cyberbot90000@gmail.com"
+        }
+    ],
+    "require": {}
+}

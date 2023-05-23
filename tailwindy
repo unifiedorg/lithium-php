@@ -1,0 +1,1 @@
+tailwind -i ./app/assets/css/twi.css -o ./app/assets/css/tw.css --watch
