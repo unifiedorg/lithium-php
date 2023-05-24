@@ -6,7 +6,7 @@ class Component
         require dirname(__DIR__, 2) . "/app/components/$components.php";
     }
 
-    public static function header($components, $ptitle, $pfavicon = '') {
+    public static function header($components, $ptitle, $pfavicon = APP_ICON) {
         $title = $ptitle;
         $favicon = $pfavicon;
         require dirname(__DIR__, 2) . "/app/components/$components.php";
