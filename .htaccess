@@ -1,3 +1,58 @@
-RewriteEngine On
-RewriteCond %{REQUEST_URI} !public/
-RewriteRule (.*) public/$1 [L]
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent direct access to .htaccess file
+    RewriteRule ^\.htaccess$ - [F]
+
+    # Deny access to specific file types
+    <FilesMatch "\.(db|ini|log|sh|xml)$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+    # Disable directory listing
+    Options -Indexes
+
+    # Redirect all requests to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect all requests to /public/ folder
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ /public/$1 [L]
+
+    # Set security headers
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Prevent MIME-sniffing
+    <IfModule mod_headers.c>
+        Header always set X-Content-Type-Options "nosniff"
+    </IfModule>
+
+    # Disable server signature
+    ServerSignature Off
+
+    # Prevent access to sensitive files
+    <FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp|tpl)|~)$">
+        Order allow,deny
+        Deny from all
+        Satisfy All
+    </FilesMatch>
+
+    # Prevent file execution in specific directories
+    <DirectoryMatch "/(app|config|lib)/">
+        Order deny,allow
+        Deny from all
+    </DirectoryMatch>
+
+    # Set secure HTTP headers
+    <IfModule mod_headers.c>
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        Header always set Referrer-Policy "strict-origin-when-cross-origin"
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-Frame-Options "SAMEORIGIN"
+        Header always set X-XSS-Protection "1; mode=block"
+    </IfModule>
+</IfModule>
