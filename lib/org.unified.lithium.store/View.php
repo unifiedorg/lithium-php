@@ -8,6 +8,10 @@ class View
         require dirname(__DIR__, 2) . "/app/views/$view.php";
         \Unified\Lithium\Store\Component::get('footer');
     }
+    
+    public static function bget($view) {
+        require dirname(__DIR__, 2) . "/app/views/$view.php";
+    }
 
     public static function return($view) {
         return dirname(__DIR__, 2) . "/app/views/$view.php";
