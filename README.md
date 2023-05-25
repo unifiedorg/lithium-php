@@ -1,3 +1,4 @@
+**Note : Lithium is currently getting a rewrite**
 ![Lithium Banner](https://raw.githubusercontent.com/unifiedorg/.github/main/img/lithium-banner.png)
 
 # Lithium PHP
